@@ -27,6 +27,9 @@ Just run the script and enjoy: `./triton-rsync.sh /your/local/path /path/on/trit
 
 The arguments are 1. your local project path, 2. the path on the target cluster server and 3. your username. As mentioned above the username must be the same for the middle and target cluster server.
 
+** Warning: ** 
+This script enforces the local state of the folder to the remote location, meaning if additional files are created on the remote location they will be deleted, so don't store results or any other work in subfolders on the remote location.
+
 Contact and Contribution
 ------------------------
 
