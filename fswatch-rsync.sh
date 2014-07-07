@@ -20,6 +20,9 @@ VERSION="0.1.2"
 # e.g. FSWATCH_PATH="/Users/you/builds/fswatch/fswatch" 
 FSWATCH_PATH="/Users/cwestrup/extracted_source_builds/fswatch/fswatch"
 
+# Sync latency / speed in seconds
+LATENCY="3"
+
 # default server setup
 MIDDLE="james.hut.fi" # middle ssh server
 TARGET="triton.aalto.fi" # target ssh server
@@ -84,7 +87,8 @@ echo      ""
 
 # Watch for changes and sync (exclude hidden files)
 echo    "Watching for changes. Quit anytime with Ctrl-C."
-${FSWATCH_PATH} -0 -r $LOCAL_PATH --exclude="/\.[^/]*$" | while read -d "" event 
+${FSWATCH_PATH} -0 -r -l $LATENCY $LOCAL_PATH --exclude="/\.[^/]*$" \
+| while read -d "" event 
   do 
     echo $event > .tmp_files
     echo -en "${green}" `date` "${nocolor}\"$event\" changed. Synchronizing... "

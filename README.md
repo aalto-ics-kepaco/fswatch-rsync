@@ -6,11 +6,13 @@ About
 
 This is a script to automatically synchronize a local project folder to a folder on a cluster server via a middle server. It watches the local folder for changes and recreates the local state on the target machine as soon as a change is detected.
 
-The script defaults to servers used at Aalto University but can be used for any similar setup.
+**Notes:**
 
-**Note:** The script ignores hidden files, you can customize the sync behaviour by changing the rsync call in the script file.
+* The script defaults to servers used at Aalto University but can be used for any similar setup.
+* The script ignores hidden files, you can customize the sync behaviour by changing the rsync call in the script file.
+* The script syncs every 3 seconds, this can be changed by setting the LATENCY variable.
 
-**Warning:** 
+**Warning:**
 This script enforces the local state of the folder to the remote location, meaning if additional files are created on the remote location they will be deleted, so don't store results or any other work in subfolders on the remote location. If you need to work inside the target folder you can of course create a hidden folder since hidden files will be ignored as mentionend above.
 
 Prerequisites
