@@ -13,7 +13,7 @@
 ################################################################################
 
 PROJECT="fswatch-rsync"
-VERSION="0.1.2"
+VERSION="0.2.0"
 
 # Set up your path to fswatch here if you don't want to / can't add it 
 # globally to your PATH variable (default is "fswatch" when specified in PATH). 
