@@ -24,7 +24,6 @@ Setup
 
 **Note 2:** On a Mac you can either install `ssh-copy-id` via MacPorts/Brew/etc, compile it from source or you can just append the content of your public key (default `~/.ssh/id_rsa.pub`) to the `~/.ssh/authorized_keys` file on the server. Make sure the access rights are set properly though (e.g. chmod 700 for `~/.ssh` and 600 for `~/.ssh/authorized_keys`, see <http://unix.stackexchange.com/questions/36540/why-am-i-still-getting-a-password-prompt-with-ssh-with-public-key-authentication>)
 
-
 Usage
 -----
 
