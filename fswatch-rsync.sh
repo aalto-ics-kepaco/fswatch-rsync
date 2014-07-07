@@ -10,8 +10,8 @@
 
 ################################################################################
 
-MIDDLE="rhea.hut.fi" # middle ssh server
-TARGET="triton" # target ssh server
+MIDDLE="james.hut.fi" # middle ssh server
+TARGET="triton.aalto.fi." # target ssh server
 
 PROJECT="fswatch-rsync"
 VERSION="0.1"
