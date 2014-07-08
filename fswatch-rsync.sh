@@ -80,22 +80,22 @@ echo      "with local version if differences occur)."
 read -n1 -r -p "Press any key to continue (or abort with Ctrl-C)... " key
 echo      ""
 echo -n   "Synchronizing... "
-rsync -avzr -q --delete --force --exclude=".*" \
+rsync -avzr -q --delete --force --exclude=".tmp_files" \
 -e "ssh $SSH_USER@$MIDDLE ssh" $LOCAL_PATH $TARGET_SSH_USER@$TARGET:$TARGET_PATH 
 echo      "done."
 echo      ""
 
 # Watch for changes and sync (exclude hidden files)
 echo    "Watching for changes. Quit anytime with Ctrl-C."
-${FSWATCH_PATH} -0 -r -l $LATENCY $LOCAL_PATH --exclude="/\.[^/]*$" \
+${FSWATCH_PATH} -0 -r -l $LATENCY $LOCAL_PATH --exclude="/\.tmp_files$" \
 | while read -d "" event 
   do 
-    echo $event > .tmp_files
+    echo $event > $LOCAL_PATH/.tmp_files
     echo -en "${green}" `date` "${nocolor}\"$event\" changed. Synchronizing... "
     rsync -avzr -q --delete --force \
-    --include-from=.tmp_files \
+    --include-from=$LOCAL_PATH/.tmp_files \
     -e "ssh $SSH_USER@$MIDDLE ssh" \
     $LOCAL_PATH $TARGET_SSH_USER@$TARGET:$TARGET_PATH 
   echo "done."
-    rm -rf .tmp_files
+    rm -rf $LOCAL_PATH/.tmp_files
   done

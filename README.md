@@ -9,11 +9,10 @@ This is a script to automatically synchronize a local project folder to a folder
 **Notes:**
 
 * The script defaults to servers used at Aalto University but can be used for any similar setup.
-* The script ignores hidden files, you can customize the sync behaviour by changing the rsync call in the script file.
 * The script syncs every 3 seconds, this can be changed by setting the LATENCY variable.
 
 **Warning:**
-This script enforces the local state of the folder to the remote location, meaning if additional files are created on the remote location they will be deleted, so don't store results or any other work in subfolders on the remote location. If you need to work inside the target folder you can of course create hidden folders or files since hidden files will be ignored as mentionend above.
+This script enforces the local state of the folder to the remote location, meaning if additional files are created on the remote location they will be deleted, so don't store results or any other work in subfolders on the remote location. 
 
 Prerequisites
 -------------
