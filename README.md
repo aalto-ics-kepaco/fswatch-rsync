@@ -47,6 +47,8 @@ Optionally you can specify
 * `[targetserver]`: the target server (default is `triton.aalto.fi`)
 * `target_ssh_user`: If your username for the middle server differs from the username at the target server  you can specify this argument. Then `ssh_user` is used as user for the middle server and `target_ssh_user` for the target server. 
 
+**Note:** If the names of the local and remote folder are the same rsync will create a folder with the same name inside the remote folder. In that case just leave out the name in of the remote folder in the target path
+
 Contact and Contribution
 ------------------------
 
