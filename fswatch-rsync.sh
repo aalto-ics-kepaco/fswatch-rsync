@@ -24,8 +24,8 @@ FSWATCH_PATH="fswatch"
 LATENCY="3"
 
 # default server setup
-MIDDLE="james.hut.fi" # middle ssh server
-TARGET="triton.aalto.fi" # target ssh server
+MIDDLE="brute.aalto.fi" # middle ssh server
+TARGET="login2.triton.aalto.fi" # target ssh server
 
 # check color support
 colors=$(tput colors)
